@@ -1,0 +1,63 @@
+/* banner */
+.banner {
+  background-color: #598cd8;
+  padding: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;   
+}
+
+/* buttons */
+.nav-button {
+  text-decoration: none;       /* Removes underline (for <a> links) */
+  background-color: white;     /* Button background color */
+  padding: 10px 20px;          /* 10px top/bottom, 20px left/right */
+  border-radius: 8px;          /* Rounds the corners */
+  font-weight: 600;            /* Makes text semi-bold */
+  color: black;               /* Text color */
+}
+
+.nav-button:hover {
+  cursor: pointer;                    /* Changes mouse to hand icon */
+  background-color: #b4deee;         /* Light blue background on hover */
+  transform: translateY(-2px);         /* Moves button 2px upward */
+  transition: all 0.2s ease;           /* Smooth animation effect */
+}
+
+/* dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown:hover {
+  cursor: pointer;                    /* Changes mouse to hand icon */
+  background-color: #b4deee;         /* Light blue background on hover */
+  transform: translateY(-2px);         /* Moves button 2px upward */
+  transition: all 0.2s ease;           /* Smooth animation effect */  
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 115%;
+  left: 5%;
+
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.dropdown-menu a {
+  padding: 8px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-menu a:hover {
+  background-color: #e0e0e0;
+}

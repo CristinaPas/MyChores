@@ -1,0 +1,25 @@
+<div class="banner">
+
+  <a routerLink="/tasks" class="nav-button">Tasks</a>
+
+  <div class="dropdown"
+       (mouseenter)="isDropdownOpen.set(true)"
+       (mouseleave)="closeDropdown()">
+
+    <a class="nav-button">Housekeeping</a>
+
+    @if (isDropdownOpen()) {
+      <div class="dropdown-menu">
+        <a routerLink="/housekeeping/bathroom" (click)="closeDropdown()">Bathroom</a>
+        <a routerLink="/housekeeping/kitchen" (click)="closeDropdown()">Kitchen</a>
+        <a routerLink="/housekeeping/bedroom" (click)="closeDropdown()">Bedroom</a>
+        <a routerLink="/housekeeping/living-room" (click)="closeDropdown()">Living Room</a>
+        <a routerLink="/housekeeping/hall" (click)="closeDropdown()">Hall</a>
+      </div>
+    }
+
+  </div>
+
+  <a routerLink="/fun" class="nav-button">Fun</a>
+
+</div>

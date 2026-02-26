@@ -1,0 +1,95 @@
+<div class="container mt-4">
+
+  <!-- Top Row with title -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="m-0">Tasks</h3>
+    <a routerLink="/" class="btn custom-btn-home">Home</a>
+  </div>
+
+  <!-- Tasks Section -->
+  <div class="row g-4">
+
+    <!-- TO DO COLUMN -->
+    <div class="col-md-6">
+      <div class="card p-3 shadow-sm">
+
+        <!-- Header row -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+
+            <h5 class="mb-3">To Do</h5>
+            <!-- In the case we don't have any input yet, we show the Add task button-->
+            <!-- When the button is clicked, the openInput event is triggered, which sets showInputField to True   -->    
+            @if (!showInputField()) {
+                <button class="btn btn-custom-add-task"
+                (click)="openInput()"> Add Task
+                </button>
+            }
+
+        </div>
+
+        @if (showInputField()) {
+            <input type="text" class="form-control mt-2"
+            [(ngModel)]="newTaskTitle" placeholder="Add new task..." />
+
+            <button class="btn btn-success mt-2"
+            (click)="addTask()">Confirm
+            </button>
+        }
+          
+        <!-- Todo List -->
+        <ul class="list-group">
+          @for (task of taskService.todoTasks(); track task.id) {
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+
+              {{ task.title }}
+
+              <div class="toggle-buttons">
+                <div>
+                    <button
+                    class="btn btn-success btn-sm me-2"
+                    (click)="taskService.toggleTask(task.id)"
+                    > ✓
+                    </button>
+
+                    <button
+                    class="btn btn-danger btn-sm"
+                    (click)="taskService.removeTask(task.id)"
+                    > ✕
+                    </button>
+                </div>
+              </div>
+
+            </li>
+          }
+        </ul>
+
+    </div>
+  </div>
+
+    <!-- DONE COLUMN -->
+    <div class="col-md-6">
+      <div class="card p-3 shadow-sm">
+
+        <h5 class="mb-3">Done</h5>
+
+        <ul class="list-group">
+          @for (task of taskService.doneTasks(); track task.id) {
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+
+              {{ task.title }}
+
+              <button
+                class="btn btn-warning btn-sm"
+                (click)="taskService.toggleTask(task.id)"
+              >
+                Undo
+              </button>
+
+            </li>
+          }
+        </ul>
+
+      </div>
+    </div>
+
+</div>

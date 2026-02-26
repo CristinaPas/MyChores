@@ -1,0 +1,36 @@
+
+.btn.custom-btn-home  {
+  background-color: #598cd8;     /* Button background color */
+  padding: 8px 16px;          /* 10px top/bottom, 20px left/right */
+  border-radius: 8px;          /* Rounds the corners */
+  font-weight: 500;            /* Makes text semi-bold */
+  color: white;               /* Text color */
+}
+
+.btn.custom-btn-home:hover {
+  cursor: pointer;                    /* Changes mouse to hand icon */
+  background-color: #b4deee;         /* Light blue background on hover */
+  transform: translateY(-2px);         /* Moves button 2px upward */
+  transition: all 0.2s ease;           /* Smooth animation effect */
+}
+
+.btn-custom-add-task {
+  --bs-btn-font-weight: 500;
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: #598cd8;
+  --bs-border-radius: 8px;
+
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #b4deee;
+
+  --bs-btn-active-bg: #b4deee;
+}
+
+.toggle-buttons {
+  opacity: 0; /* Hide buttons by default */
+  transition: opacity 0.2s ease; /* Smooth transition for showing/hiding */
+}
+
+.list-group-item:hover .toggle-buttons {
+  opacity: 1; /* Show buttons on hover */
+}
