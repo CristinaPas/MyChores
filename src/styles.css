@@ -14,9 +14,3 @@ body {
 app-root {
   display: block;
 } */
-
-body {
-  background-image: url('/red-background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
