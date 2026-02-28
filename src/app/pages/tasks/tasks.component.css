@@ -32,6 +32,15 @@
   transition: opacity 0.2s ease; /* when the button appears, then show a smooth transition */
 }
 
-.list-group-item:hover .toggle-buttons {
+.todo-column .list-group-item:hover .toggle-buttons {
+  opacity: 1; /* Show buttons on hover */
+}
+
+.done-column .btn.btn-warning {
+  opacity: 0; /* the button is by default hidden */
+  transition: opacity 0.2s ease; /* when the button appears, then show a smooth transition */
+}
+
+.done-column .list-group-item:hover .btn.btn-warning {
   opacity: 1; /* Show buttons on hover */
 }
