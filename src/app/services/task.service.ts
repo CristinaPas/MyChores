@@ -9,13 +9,14 @@ export class TaskService {
   private storageKey = 'tasks';
 
   private tasks = signal<Task[]>(this.loadFromStorage());
-  //we create an Angular signal to hold the list of tasks
+  //Signal of type list: we create an Angular signal to hold the list of tasks
 
-  // Derived signals
+  //from that list of tasks, we filter only the todo ones
   todoTasks = computed(() =>
     this.tasks().filter(task => !task.completed)
   );
 
+  //from that list of tasks, we filter only the todo ones
   doneTasks = computed(() =>
     this.tasks().filter(task => task.completed)
   );

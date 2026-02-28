@@ -14,7 +14,8 @@ export class TasksComponent {
 
   newTaskTitle = ''; //create and instantiate an empty string to hold the new task title
   constructor(public taskService: TaskService) {} //we inject here the TaskService to use its methods and properties in our component
-  showInputField = signal(false);
+
+  showInputField = signal(false); //when we start the page, we don't want to immediately show the input field, so we set the signal to false by default
 
   addTask() {
     if (!this.newTaskTitle.trim()) return;
