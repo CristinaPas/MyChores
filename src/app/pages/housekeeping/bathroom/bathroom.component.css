@@ -10,7 +10,7 @@
 
 }
 
-
+/* style the home button */
 .btn.custom-btn-home  {
   background-color: #598cd8;     
   padding: 8px 16px;          /* 10px top/bottom, 20px left/right */
@@ -33,6 +33,7 @@
   
 }
 
+/* style the add task button */
 .btn-custom-add-task {
   --bs-btn-font-weight: 500;
   --bs-btn-color: #ffffff;
@@ -45,11 +46,12 @@
   --bs-btn-active-bg: #b4deee;
 }
 
-.toggle-buttons {
-  opacity: 0; /* Hide buttons by default */
-  transition: opacity 0.2s ease; /* Smooth transition for showing/hiding */
+/*when .list-group-item is hovered, inside the .btn.btn-danger class, then apply:*/
+.list-group-item:hover .btn.btn-danger{
+  opacity: 1; /* Show buttons on hover */
 }
 
-.list-group-item:hover .toggle-buttons {
-  opacity: 1; /* Show buttons on hover */
+.btn.btn-danger {
+  opacity: 0; /* the button is by default hidden */
+  transition: opacity 0.2s ease; /* when the button appears, then show a smooth transition */
 }

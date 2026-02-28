@@ -1,4 +1,4 @@
-
+/* style the home button */
 .btn.custom-btn-home  {
   background-color: #598cd8;     /* Button background color */
   padding: 8px 16px;          /* 10px top/bottom, 20px left/right */
@@ -14,6 +14,7 @@
   transition: all 0.2s ease;           /* Smooth animation effect */
 }
 
+/* style the add task button */
 .btn-custom-add-task {
   --bs-btn-font-weight: 500;
   --bs-btn-color: #ffffff;
@@ -27,8 +28,8 @@
 }
 
 .toggle-buttons {
-  opacity: 0; /* Hide buttons by default */
-  transition: opacity 0.2s ease; /* Smooth transition for showing/hiding */
+  opacity: 0; /* the button is by default hidden */
+  transition: opacity 0.2s ease; /* when the button appears, then show a smooth transition */
 }
 
 .list-group-item:hover .toggle-buttons {
