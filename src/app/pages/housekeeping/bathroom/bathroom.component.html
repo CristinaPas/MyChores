@@ -1,51 +1,58 @@
 
-<div class="container pt-4"> <!-- adds padding from the top (pt) -->
+<div class="bathroom-headers">
 
-<!-- Top Row with title and home button-->
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h3 class="m-0">Bathroom </h3>
-        <a routerLink="/" class="btn custom-btn-home">Home</a>
-    </div>
+    <div class="container pt-4"> <!-- adds padding from the top (pt) -->
 
-    <div class="row g-4">
-        <div class="d-flex">
-            @if (!showInputField()) 
-            {
-                <button class="btn btn-custom-add-task"
-                (click)="openInput()"> Add Task 
-                </button>
-            }
+    <!-- Top Row with title and home button-->
+        <div class="d-flex justify-content-between align-items-center">
+            <h3 class="m-0">Bathroom </h3>
+            <a routerLink="/" class="btn custom-btn-home">Home</a>
         </div>
+
+    </div>
+</div>    
+
+<div class="main-content">
+
+    <div class="container"> 
+        <div class="row g-4">
+            <div class="d-flex">
+                @if (!showInputField()) 
+                {
+                    <button class="btn btn-custom-add-task"
+                    (click)="openInput()"> Add Task 
+                    </button>
+                }
+            </div>
+        </div>
+
+        <div class="d-flex gap-2"> 
+            @if (showInputField()) 
+            {
+                <input type="text" class="form-control mt-2" placeholder="Add new task..." 
+                    [(ngModel)]="newTaskTitle" placeholder="Add new task..." /> <!-- binding the function to the click action -->
+                <button class="btn btn-success mt-2"
+                    (click)="addTask()">Confirm</button>
+            }
+        </div>    
+    
+        <!-- ToDo tasks list -->
+        <ul class="list-group pt-3">
+
+            @for (task of taskService.todoTasks(); track task.id) {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a>{{ task.title }}</a>
+
+                    <button class="btn btn-danger btn-sm" (click)="taskService.removeTask(task.id)">
+                        ✕</button>
+                </li>
+            }
+
+        </ul>
+
     </div>
 
-
-
-    <div class="d-flex gap-2"> 
-        @if (showInputField()) 
-        {
-            <input type="text" class="form-control mt-2" placeholder="Add new task..." 
-                [(ngModel)]="newTaskTitle" placeholder="Add new task..." /> <!-- binding the function to the click action -->
-            <button class="btn btn-success mt-2"
-                (click)="addTask()">Confirm</button>
-        }
-    </div>    
- 
-    <!-- ToDo tasks list -->
-    <ul class="list-group pt-3">
-
-        @for (task of taskService.todoTasks(); track task.id) {
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a>{{ task.title }}</a>
-
-                <button class="btn btn-danger btn-sm" (click)="taskService.removeTask(task.id)">
-                    ✕</button>
-            </li>
-        }
-
-    </ul>
-
-
-</div>
+</div>  
 
 
 
