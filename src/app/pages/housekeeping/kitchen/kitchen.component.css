@@ -1,0 +1,34 @@
+
+/* display a picture in the bigger screen */
+.main-content {
+  display: block;
+  min-height: 100vh;
+  background-image: url('/kitchen-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+/*kitchen header style #d9c764*/
+.kitchen-headers {
+  background-color: #d9c764;
+  padding-bottom: 20px;
+}
+
+
+/* style the home button */
+.btn.custom-btn-home  {
+  background-color: #598cd8;     
+  padding: 8px 16px;          /* 10px top/bottom, 20px left/right */
+  border-radius: 8px;          /* Rounds the corners */
+  font-weight: 500;            /* Makes text semi-bold */
+  color: white;               
+}
+
+.btn.custom-btn-home:hover {
+  cursor: pointer;                    
+  background-color: #b4deee;         /* Light blue background on hover */
+  transform: translateY(-2px);         /* Moves button 2px upward */
+  transition: all 0.2s ease;           /* Smooth animation effect */
+}
