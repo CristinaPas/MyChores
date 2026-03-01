@@ -32,3 +32,16 @@
   transform: translateY(-2px);         /* Moves button 2px upward */
   transition: all 0.2s ease;           /* Smooth animation effect */
 }
+
+/* style the add task button */
+.btn-custom-add-task {
+  --bs-btn-font-weight: 500;
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: #598cd8;
+  --bs-border-radius: 8px;
+
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #b4deee;
+
+  --bs-btn-active-bg: #b4deee;
+}

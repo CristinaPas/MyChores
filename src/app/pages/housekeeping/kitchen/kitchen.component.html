@@ -17,7 +17,36 @@
 <div class="main-content">
 
     <div class="container">
-        <a>My main container here</a>
+
+        @if (!showInputField()) {
+            <button class="btn btn-custom-add-task mt-4"
+                (click)="openInput()">
+                Add Task</button>
+
+        }
+
+        <div class="d-flex gap-2"> 
+            @if (showInputField()) {
+                    <input type="text" class="form-control mt-2" placeholder="Add new task..." 
+                        [(ngModel)]="newTaskTitle" placeholder="Add new task..." /> <!-- binding the function to the click action -->
+                    <button class="btn btn-success mt-2"
+                        (click)="addTask()">Confirm</button>
+            }
+        </div>
+
+        <ul class="list-group pt-3">
+
+        @for (task of taskService.todoTasks(); track task.id) {
+
+            <li class="list-group-item">
+                {{ task.title }}</li>
+                
+        }
+            
+        </ul>
+
+
+
     </div>
 
 </div>
